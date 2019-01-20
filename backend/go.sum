@@ -1,0 +1,4 @@
+github.com/gorilla/mux v1.6.2 h1:Pgr17XVTNXAk3q/r4CpKzC5xBM/qW1uVLV+IhRZpIIk=
+github.com/gorilla/mux v1.6.2/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2zaAs=
+github.com/tauffredou/beats v6.2.1+incompatible h1:0tyXhAZZMweOqEgN4f3iR44vFwuelNJrXom7gsX4FK8=
+github.com/tauffredou/kiosk v0.0.0-20190119195835-c2270da2f4ea h1:LsbPTDibXlo+lkLuB/xk898/kzAyqrdQichhtCoXito=
