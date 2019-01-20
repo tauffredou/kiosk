@@ -13,6 +13,7 @@ cat <<EOF >/etc/lightdm/lightdm.conf.d/50-kiosk.conf
 [SeatDefaults]
 autologin-user=kiosk
 user-session=openbox
+xserver-command = X -nocursor
 EOF
 
 # Start chromedriver on startup
