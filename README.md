@@ -36,5 +36,10 @@ Kiosk aims to display the right dashboard at the rignt time by subscribing to ev
 ## Start test browser
 vagrant up
 
+
+## Device architecture
+![](doc/diagram-device-os.png)
+
+
 ## Device boot sequence
 ![](doc/diagram-device.png)
