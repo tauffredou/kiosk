@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kiosk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <h1>Kiosk</h1>
+    <div class="status" id="status"></div>
+</div>
+<script>
+    var states = {
+        "init": {
+            desc: "Initialization"
+        },
+        "register": {
+            desc: "Register"
+        },
+        "error": {
+            desc: "Error",
+        }
+    };
+
+    function status(s) {
+        console.log("status set to " + s);
+        var status = document.getElementById('status');
+        status.className = "status " + s;
+        status.innerHTML = states[s].desc
+    }
+
+    function checkStatus() {
+        fetch('/api/state')
+            .then(response => response.json())
+            .then(data => {
+                status(data.state)
+            })
+            .catch(r => {
+                status("error")
+            })
+    }
+
+    (function () {
+        checkStatus();
+        var intervalID = setInterval(function () {
+            checkStatus()
+        }, 1000);
+
+    })()
+</script>
+</body>
+
+</html>
