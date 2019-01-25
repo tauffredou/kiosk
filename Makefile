@@ -21,8 +21,19 @@ reset-kiosk:
 
 .PHONY:
 # Start kiosk server
-kiosk-server:
-	$(MAKE) -C backend run
+run-server:
+	go run cmd/server/main.go
+
+.PHONY:
+# Start kiosk device
+run-kiosk:
+	python kiosk/main.py
+
+.PHONY:
+# Build the kiosk image
+build-kiosk-image:
+	docker build -t tauffredou/kiosk:dev -f kiosk/Dockerfile kiosk
+	docker push tauffredou/kiosk:dev
 
 .PHONY: help
 .DEFAULT_GOAL:= help
